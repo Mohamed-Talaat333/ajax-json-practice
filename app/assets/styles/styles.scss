@@ -1,0 +1,24 @@
+/*********************************************************
+    // importing settings files
+**********************************************************/
+
+@import "sass/settings/dir-mixins-ltr";
+@import "sass/settings/helper-mixins";
+@import "sass/settings/variables";
+
+/*********************************************************
+    // importing shared files
+**********************************************************/
+
+@import "sass/shared/fonts";
+@import "sass/shared/icons";
+@import "sass/shared/layout";
+@import "sass/shared/typography";
+@import "sass/shared/tables";
+@import "sass/shared/buttons";
+
+/*********************************************************
+    // importing all pages
+**********************************************************/
+
+@import "sass/pages/index";

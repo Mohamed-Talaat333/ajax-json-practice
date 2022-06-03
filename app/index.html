@@ -1,0 +1,229 @@
+<!-- start page head -->
+@include("page-head.html")
+
+<div class="page_content">
+  <!-- start circular progress -->
+
+  <div class="top_nav_wrapper">
+    <div class="container">
+      <div class="top_nav">
+        <div class="logo">
+          <img src="$$/assets/images/logo.png" alt="" />
+
+          <div class="name">Step to success school</div>
+        </div>
+
+        <div class="actions">
+          <button class="icon_btn noti_active">
+            <i class="icon-bell"></i>
+          </button>
+
+          <button class="icon_btn">
+            <i class="icon-user"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- start choose kid -->
+
+  <div class="choose_kid_wrapper">
+    <div class="container">
+      <div class="choose_kid">
+        <div class="chosen_kid">
+          <div class="image_holder">
+            <img src="$$/assets/images/temp/choose_kid2.png" alt="" />
+          </div>
+
+          <div class="kid_name">Adam</div>
+        </div>
+
+        <div class="all_kids">
+          <button class="choose_kid_btn">
+            <div class="image_holder">
+              <img src="$$/assets/images/temp/choose_kid1.jpg" alt="" />
+            </div>
+            <div class="kid_name">Maged</div>
+          </button>
+
+          <button class="choose_kid_btn active">
+            <div class="image_holder">
+              <img src="$$/assets/images/temp/choose_kid2.png" alt="" />
+            </div>
+            <div class="kid_name">Adam</div>
+          </button>
+
+          <button class="choose_kid_btn">
+            <div class="image_holder">
+              <img src="$$/assets/images/temp/choose_kid3.jpg" alt="" />
+            </div>
+            <div class="kid_name">Nabil</div>
+          </button>
+
+          <button class="btn btn-outline-primary add_kid_btn">
+            <i class="icon-add-user"></i>
+            Add Child
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- start statistics -->
+
+  <div class="stats_wrapper">
+    <div class="container">
+      <div class="section_title mb-2">Statistics</div>
+
+      <div class="stats">
+        <div class="box_holder">
+          <div class="box-wrapper">
+            <div class="box-circle">
+              <div
+                class="circle-border red-background"
+                data-color1="#fff"
+                data-color2="#493174"
+              >
+                <div class="circle-percentage">
+                  <span class="percentage" data-percentage="81"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="title">32 out of 40</div>
+            <div class="hint">Solved Homework</div>
+          </div>
+        </div>
+
+        <div class="box_holder">
+          <div class="box-wrapper">
+            <div class="box-circle">
+              <div
+                class="circle-border"
+                data-color1="#fff"
+                data-color2="#739500"
+              >
+                <div class="circle-percentage">
+                  <span class="percentage" data-percentage="50"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info">
+            <div class="title">45 out of 90</div>
+            <div class="hint">Attended Days</div>
+          </div>
+        </div>
+
+        <div class="box_holder">
+          <div class="box-wrapper">
+            <div class="box-circle">
+              <div
+                class="circle-border"
+                data-color1="#fff"
+                data-color2="#950086"
+              >
+                <div class="circle-percentage">
+                  <span class="percentage" data-percentage="93"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info">
+            <div class="title">8 out of 11</div>
+            <div class="hint">Online Sessions Attended</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- start chart -->
+
+  <div class="container">
+    <div class="d-flex mb-2">
+      <div class="section_title">Homework</div>
+    </div>
+    <div class="chart">
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+
+  <!-- start calendar -->
+
+  <div class="calendar">
+    <div class="container">
+      <div class="section_title">Attendance</div>
+
+      <div id="datepicker_inline"></div>
+    </div>
+  </div>
+
+  <!-- start gradebook -->
+
+  <div class="gradebook">
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th colspan="2">
+                <div class="section_title">Gradebook</div>
+              </th>
+              <td>1st Semester</td>
+              <td>2nd Semester</td>
+              <td>Year Pass Limit</td>
+              <td>Total Marks</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th colspan="2">Math</th>
+              <td>42/50</td>
+              <td>40/50</td>
+              <td>50</td>
+              <td>82/100</td>
+            </tr>
+            <tr>
+              <th colspan="2">Geology</th>
+              <td>42/50</td>
+              <td>40/50</td>
+              <td>50</td>
+              <td>82/100</td>
+            </tr>
+            <tr>
+              <th colspan="2">Sociology</th>
+              <td>42/50</td>
+              <td>40/50</td>
+              <td>50</td>
+              <td>82/100</td>
+            </tr>
+            <tr>
+              <th colspan="2">Chemistry</th>
+              <td>42/50</td>
+              <td>40/50</td>
+              <td>50</td>
+              <td>82/100</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table total">
+          <tbody>
+            <tr>
+              <th colspan="5">Total Mark</th>
+              <td>3785 / 4000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- the end -->
+</div>
+
+@include("page-tail.html")

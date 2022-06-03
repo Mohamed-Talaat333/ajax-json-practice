@@ -1,0 +1,224 @@
+/* Main properties that control the layout direction are:
+-----------------------------------------------
+- Direction (LTR/RTL)
+- Text-align
+- Float (left/right)
+- Margin 
+- Padding
+- Absolute position (left/right)
+- Background position (left/right)
+- Border
+- Border radious
+- Note: "Think about flexbox properties"
+*/
+
+/* Direction */
+/*********************************************************
+    // direction
+**********************************************************/
+
+@mixin dir-direction($value) {
+  @if $value==ltr {
+    html[dir="ltr"] & {
+      direction: ltr;
+    }
+
+    html[dir="rtl"] & {
+      direction: rtl;
+    }
+  } @else if $value==rtl {
+    html[dir="ltr"] & {
+      direction: rtl;
+    }
+
+    html[dir="rtl"] & {
+      direction: ltr;
+    }
+  } @else {
+    direction: inherit;
+  }
+}
+
+/*********************************************************
+    // Text-align
+**********************************************************/
+
+@mixin dir-text-align($value, $importance: null) {
+  @if $value==left {
+    html[dir="ltr"] & {
+      text-align: left $importance;
+    }
+
+    html[dir="rtl"] & {
+      text-align: right $importance;
+    }
+  } @else if $value==right {
+    html[dir="ltr"] & {
+      text-align: right $importance;
+    }
+
+    html[dir="rtl"] & {
+      text-align: left $importance;
+    }
+  } @else {
+    text-align: inherit;
+  }
+}
+
+/*********************************************************
+    // float
+**********************************************************/
+
+@mixin dir-float($value, $importnace: null) {
+  @if $value==left {
+    html[dir="ltr"] & {
+      float: left $importnace;
+    }
+
+    html[dir="rtl"] & {
+      float: right $importnace;
+    }
+  } @else if $value==right {
+    html[dir="ltr"] & {
+      float: right $importnace;
+    }
+
+    html[dir="rtl"] & {
+      float: left $importnace;
+    }
+  } @else {
+    float: none;
+  }
+}
+
+/*********************************************************
+    // margin
+**********************************************************/
+
+@mixin dir-margin($top, $right, $bottom, $left, $importnace: null) {
+  html[dir="ltr"] & {
+    margin: $top $right $bottom $left $importnace;
+  }
+
+  html[dir="rtl"] & {
+    margin: $top $left $bottom $right $importnace;
+  }
+}
+
+@mixin dir-margin-left($value) {
+  html[dir="ltr"] & {
+    margin-left: $value;
+  }
+
+  html[dir="rtl"] & {
+    margin-right: $value;
+  }
+}
+
+@mixin dir-margin-right($value) {
+  html[dir="ltr"] & {
+    margin-right: $value;
+  }
+
+  html[dir="rtl"] & {
+    margin-left: $value;
+  }
+}
+
+/*********************************************************
+    // padding
+**********************************************************/
+
+@mixin dir-padding($top, $right, $bottom, $left, $importnace: null) {
+  html[dir="ltr"] & {
+    padding: $top $right $bottom $left $importnace;
+  }
+
+  html[dir="rtl"] & {
+    padding: $top $left $bottom $right $importnace;
+  }
+}
+
+@mixin dir-padding-left($value) {
+  html[dir="ltr"] & {
+    padding-left: $value;
+  }
+
+  html[dir="rtl"] & {
+    padding-right: $value;
+  }
+}
+
+@mixin dir-padding-right($value) {
+  html[dir="ltr"] & {
+    padding-right: $value;
+  }
+
+  html[dir="rtl"] & {
+    padding-left: $value;
+  }
+}
+
+/*********************************************************
+    // border
+**********************************************************/
+
+@mixin dir-border-left($value) {
+  html[dir="ltr"] & {
+    border-left: $value;
+  }
+
+  html[dir="rtl"] & {
+    border-right: $value;
+  }
+}
+
+@mixin dir-border-right($value) {
+  html[dir="ltr"] & {
+    border-right: $value;
+  }
+
+  html[dir="rtl"] & {
+    border-left: $value;
+  }
+}
+
+/*********************************************************
+    // left and right for absolute position
+**********************************************************/
+
+@mixin dir-left($value) {
+  html[dir="ltr"] & {
+    left: $value;
+  }
+
+  html[dir="rtl"] & {
+    right: $value;
+  }
+}
+
+@mixin dir-right($value) {
+  html[dir="ltr"] & {
+    right: $value;
+  }
+
+  html[dir="rtl"] & {
+    left: $value;
+  }
+}
+
+/*********************************************************
+    // other properties
+**********************************************************/
+
+@mixin dir-ltr {
+  html[dir="ltr"] & {
+    @content;
+  }
+}
+
+@mixin dir-rtl {
+  html[dir="rtl"] & {
+    @content;
+  }
+}

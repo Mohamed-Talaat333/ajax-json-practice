@@ -1,0 +1,343 @@
+/*********************************************************
+    // start top nav
+**********************************************************/
+
+.top_nav_wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 7;
+  transition: all 0.3s ease-in-out;
+  min-width: 318px;
+
+  &.new {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: saturate(180%) blur(20px);
+    padding: 5px 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+
+    .logo > img {
+      width: 40px;
+
+      @media (max-width: 575px) {
+        width: 30px;
+      }
+    }
+  }
+
+  .top_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    > img {
+      width: 50px;
+      height: auto;
+      @include dir-margin-right(10px);
+      transition: all 0.3s ease-in-out;
+
+      @media (max-width: 575px) {
+        width: 40px;
+      }
+    }
+
+    .name {
+      color: $color_text1;
+      line-height: 110%;
+    }
+  }
+
+  .actions {
+    white-space: nowrap;
+    .icon_btn {
+      &:not(:last-child) {
+        @include dir-margin-right(8px);
+      }
+    }
+  }
+}
+
+.noti_active {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $color_danger;
+  }
+}
+
+/*********************************************************
+    // start stats
+**********************************************************/
+
+.stats_wrapper {
+  margin: 50px 0;
+}
+
+.stats {
+  background-color: $color_bg1;
+  border-radius: 20px;
+  border: 1px solid #e9e9e9;
+  padding: 25px 10%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
+
+  .box_holder {
+    font-size: toRem(16);
+    text-align: center;
+
+    @media (max-width: 991px) {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (min-width: 575px) and (max-width: 991px) {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: left;
+
+      .box-wrapper {
+        margin: 0;
+        @include dir-margin-right(10%);
+      }
+    }
+
+    .title {
+      font-family: $font_bold;
+      margin: 10px 0;
+    }
+    .hint {
+      font-family: $font_regular;
+    }
+  }
+
+  .box-wrapper {
+    width: 120px;
+    padding-top: 120px;
+    position: relative;
+    margin: auto;
+  }
+
+  .box-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding-top: 100%;
+  }
+
+  .circle-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .circle-percentage {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    text-align: center;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  .percentage {
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+}
+
+/*********************************************************
+    // start choose kid
+**********************************************************/
+
+.choose_kid_wrapper {
+  background-color: $color_bg1;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 25px 0;
+
+  .choose_kid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .chosen_kid {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media (max-width: 991px) {
+      margin-bottom: 10px;
+    }
+
+    .image_holder {
+      width: 85px;
+      height: 85px;
+      border-radius: 8px;
+      overflow: hidden;
+      @include dir-margin-right(10px);
+
+      @media (max-width: 575px) {
+        width: 50px;
+        height: 50px;
+      }
+
+      > img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .kid_name {
+      font-size: toRem(30);
+      font-family: $font_bold;
+      color: $color_text1;
+    }
+  }
+
+  .all_kids {
+    display: flex;
+    align-items: center;
+
+    .add_kid_btn {
+      @include dir-margin-left(10px);
+
+      @media (max-width: 767px) {
+        position: absolute;
+        top: 25px;
+        @include dir-right(0);
+      }
+
+      @media (max-width: 575px) {
+        top: 7px;
+      }
+    }
+  }
+
+  .choose_kid_btn {
+    padding: 5px 8px;
+    border-radius: 8px;
+    border: 1px solid #f0f0f1;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+
+    &:not(:first-child) {
+      @include dir-margin-left(10px);
+    }
+
+    .image_holder {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      overflow: hidden;
+      @include dir-margin-right(10px);
+
+      > img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .kid_name {
+      font-size: toRem(16);
+      color: $color_text1;
+    }
+
+    &.active {
+      border: 1px solid rgba($color_main, 0.2);
+      background-color: rgba($color_main, 0.2);
+
+      .kid_name {
+        font-weight: bold;
+        color: $color_main;
+      }
+    }
+  }
+}
+
+/*********************************************************
+    // start chart
+**********************************************************/
+
+.chart {
+  width: 100%;
+  min-width: 100%;
+  height: 25vw;
+  padding: 30px;
+  border: 1px solid #e9e9e9;
+  border-radius: 20px;
+  background-color: $color_bg1;
+
+  @media (max-width: 767px) {
+    height: 35vw;
+    padding: 10px;
+  }
+
+  @media (max-width: 575px) {
+    height: 60vw;
+  }
+
+  @media (max-width: 40px) {
+    min-height: 225px;
+  }
+}
+
+/*********************************************************
+    // start attendance
+**********************************************************/
+
+.calendar {
+  margin: 50px 0 30px;
+  #datepicker_inline {
+    position: relative;
+    top: -30px;
+
+    @media (max-width: 575px) {
+      top: 0;
+      margin-top: 10px;
+    }
+  }
+}

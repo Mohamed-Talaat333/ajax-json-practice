@@ -1,0 +1,57 @@
+/*********************************************************
+    // text colors
+**********************************************************/
+
+.text-muted {
+  color: #b2b2b2 !important;
+}
+
+.text-warning {
+  color: #ffaa00 !important;
+}
+
+.text-success {
+  color: #219f45 !important;
+}
+
+.text-danger {
+  color: #fff !important;
+}
+
+.text-info {
+  color: #fff !important;
+}
+
+.text-black {
+  color: #121212 !important;
+}
+
+.text-danger {
+  color: #aa4242 !important;
+}
+
+/*********************************************************
+    // text font
+**********************************************************/
+
+.text-bold {
+  font-family: $font_bold !important;
+}
+
+.text-regular {
+  font-family: $font_regular;
+}
+
+/*********************************************************
+    // text direction
+**********************************************************/
+
+.text-left {
+  @include dir-text-align(left);
+  justify-content: end;
+}
+
+.text-right {
+  @include dir-text-align(right);
+  justify-content: end;
+}
